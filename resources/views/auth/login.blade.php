@@ -6,6 +6,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Favicon icon-->
   <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png') }}" />
@@ -27,6 +28,16 @@
         <div class="d-flex align-items-center justify-content-center w-100 z-1 position-relative">
           <div class="card auth-card mb-0 mx-3">
             <div class="card-body pt-5">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Contoh pesan kesalahan - Tes statis
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              @if ($errors->has('login'))
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      {{ $errors->first('login') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              @endif
               <a href="index.html" class="text-nowrap logo-img text-center d-flex align-items-center justify-content-center mb-5 w-100">
                 <!-- <img src="assets/images/logos/logo-dark.svg" class="light-logo" alt="Logo-Dark" /> -->
                 <img src="assets/images/logos/logo-light.svg" class="dark-logo" alt="Logo-light" />
@@ -93,7 +104,6 @@
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
-
 </html>
 
 

@@ -66,7 +66,9 @@ class LoginController extends Controller
         if(Auth::attempt($login)) {
             return view('about');
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->withErrors([
+                'login' => 'Email atau password salah.',
+            ])->withInput();
         }
     }
 

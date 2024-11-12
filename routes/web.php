@@ -25,6 +25,9 @@ use App\Http\Controllers\KonsumenController;
 Route::get('/', function () {
     return view('history_order');
 });
+Route::get('/t', function () {
+    return view('transaksi_order');
+});
 
 Route::get('/template', function(){
     return view('layouts.try');
